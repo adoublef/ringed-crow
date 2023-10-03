@@ -8,3 +8,8 @@ tasks:
     deps:
       - cache
     cmd: bun run start
+
+  img:
+    cmds: 
+      - docker build -t bun-elysia .
+      - docker run --rm -p 8000:8000 bun-elysia
