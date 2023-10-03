@@ -1,0 +1,10 @@
+version: 3
+
+tasks:
+  cache:
+    cmd: bun install 
+
+  dev:
+    deps:
+      - cache
+    cmd: bun run start
