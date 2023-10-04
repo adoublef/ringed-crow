@@ -21,7 +21,7 @@ export function handleIndex(): Handler {
         const { q: name } = parseDto(c.query);
 
         return (
-            <Base head={{ title: "Home", baseUrl: c.request.url }}>
+            <Base head={{ title: "Home" }}>
                 <header>
                     <nav>
                         <ul>
