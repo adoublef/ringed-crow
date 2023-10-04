@@ -1,25 +1,9 @@
 import { Html } from "@elysiajs/html";
 import { Handler } from "elysia";
-import { Output, maxBytes, object, optional, parse, string } from "valibot";
 import { Base } from "~/jsx/dom/base";
 
-export function handleIndex(): Handler {
-    const dto = object({
-        q: optional(string([maxBytes(8)]))
-    });
-
-    const parseDto = (data: unknown): Output<typeof dto> => {
-        try {
-            return parse(dto, data);
-        } catch (error) {
-            // NOTE -- no real way of including error code
-            throw new Error("error parsing dto");
-        }
-    };
-
+export function handleAbout(): Handler {
     return c => {
-        const { q: name } = parseDto(c.query);
-
         return (
             <Base head={{ title: "Home", baseUrl: c.request.url }}>
                 <header>
@@ -36,9 +20,7 @@ export function handleIndex(): Handler {
                 </header>
                 <main>
                     <hgroup>
-                        <h1>
-                            Hello, {name ?? "world"}!
-                        </h1>
+                        <h1>About</h1>
                         <h2>Still under construction 👷🏿</h2>
                     </hgroup>
                 </main>

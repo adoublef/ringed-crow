@@ -28,7 +28,8 @@
             "bun-types" // add Bun global
         ],
         "paths": {
-            "~/lib/*": ["./lib/*"]
+            "~/lib/*": ["./lib/*"],
+            "~/jsx/*": ["./jsx/*"]
         }
     }
 }
