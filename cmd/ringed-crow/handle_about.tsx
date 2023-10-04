@@ -5,7 +5,7 @@ import { Base } from "~/jsx/dom/base";
 export function handleAbout(): Handler {
     return c => {
         return (
-            <Base head={{ title: "Home", baseUrl: c.request.url }}>
+            <Base head={{ title: "Home" }}>
                 <header>
                     <nav>
                         <ul>
