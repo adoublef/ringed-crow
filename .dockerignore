@@ -2,3 +2,4 @@
 !*.json
 !bun.lockb
 !cmd
+!lib

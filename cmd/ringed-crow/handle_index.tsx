@@ -19,6 +19,6 @@ export function handleIndex(): Handler {
     return c => {
         const { q: name } = parseDto(c.query);
 
-        return (<strong>hello, {name ?? "world"}</strong>);
+        return (<strong>hello {name ?? "world"} from bun</strong>);
     };
 }

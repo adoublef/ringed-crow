@@ -1,18 +1,25 @@
 ARG BUN_VERSION=1.0.4
 
-FROM oven/bun:${BUN_VERSION} AS deploy
-
-WORKDIR /opt
+FROM oven/bun:${BUN_VERSION} AS build
+WORKDIR /app
 
 COPY package.json .
 COPY bun.lockb .
 
 RUN bun install --production
 
+# ? --------------------------------
+
+FROM gcr.io/distroless/base AS final
+WORKDIR /app
+
+COPY --from=build /usr/local/bin/bun bun
+COPY --from=build /app/node_modules node_modules
+
 COPY . .
-# COPY public public
+COPY tsconfig.json .
 
 ENV NODE_ENV production
-CMD ["bun", "run", "start"]
+CMD ["./bun", "cmd/ringed-crow/index.ts"]
 
 EXPOSE 8000

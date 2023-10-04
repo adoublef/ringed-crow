@@ -1,21 +1,21 @@
 {
-    "name": "bun-elysia",
-    "module": "cmd/bun-elysia/index.ts",
-    "type": "module",
-    "scripts": {
-        "start": "bun run cmd/bun-elysia/index.ts"
-    },
-    "devDependencies": {
-        "bun-types": "latest"
-    },
-    "peerDependencies": {
-        "typescript": "^5.0.0"
-    },
-    "dependencies": {
-        "@elysiajs/html": "^0.7.0",
-        "@kitajs/html": "^3.0.0",
-        "@kitajs/ts-html-plugin": "^1.2.0",
-        "elysia": "^0.7.15",
-        "valibot": "^0.18.0"
-    }
+  "name": "ringed-crow",
+  "module": "cmd/ringed-crow/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun run cmd/ringed-crow/index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/html": "^0.7.0",
+    "@kitajs/html": "^3.0.0",
+    "@kitajs/ts-html-plugin": "^1.2.0",
+    "elysia": "^0.7.15",
+    "valibot": "^0.18.0"
+  }
 }
