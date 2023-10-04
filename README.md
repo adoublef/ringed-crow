@@ -1,15 +1,3 @@
-# bun-elysia
+# Ringed Crow
 
-To install dependencies:
-
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run cmd/bun-elysia/index.ts
-```
-
-This project was created using `bun init` in bun v1.0.3. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+[![Fly.io Dashboard](https://img.shields.io/badge/fly.io-dashboard-7c3aed)](https://fly-metrics.net/d/fly-app/fly-app?orgId=141716&var-app=ringed-crow)
