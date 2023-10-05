@@ -10,7 +10,7 @@ RUN bun install --production
 
 # ? --------------------------------
 
-FROM gcr.io/distroless/base AS final
+FROM gcr.io/distroless/cc AS final
 WORKDIR /app
 
 COPY --from=build /usr/local/bin/bun bun
