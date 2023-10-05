@@ -11,7 +11,7 @@ tasks:
 
   env:
     cmds:
-      - infisical secrets --env=dev --path=ringed-crow {{.CLI_ARGS}}
+      - infisical secrets --path=ringed-crow {{.CLI_ARGS}}
 
   img:
     cmds: 
