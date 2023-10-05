@@ -1,6 +1,6 @@
 import { Html } from "@elysiajs/html";
 import { Client } from "@libsql/client";
-import { Handler } from "elysia";
+import { Handler, NotFoundError, ParseError } from "elysia";
 import { Output, maxBytes, object, optional, parse, string, transform } from "valibot";
 import { Base } from "~/jsx/dom/base";
 import { Decorator as DTurso } from "~/lib/turso";
@@ -14,12 +14,14 @@ export function handleIndex(): Handler<any, DTurso> {
         try {
             return parse(dto, data);
         } catch (error) {
+            // throw new NotFoundError()
             // NOTE -- no real way of including error code
-            throw new Error("error parsing dto");
+            throw new ParseError("error parsing dto");
         }
     };
 
-    const simulate =async (c: Client, name: string)=>{
+    const getName =async (c: Client, name: string)=>{
+        // NOTE -- throw internal error if there is an error
         const rs = ((await c.execute({
             sql: "SELECT ?", args: [name]
         })).rows.at(0)!);
@@ -47,7 +49,7 @@ export function handleIndex(): Handler<any, DTurso> {
                 <main>
                     <hgroup>
                         <h1>
-                            Hello, {await simulate(c.db, q)}!
+                            Hello, {await getName(c.db, q)}!
                         </h1>
                         <h2>Still under construction 👷🏿</h2>
                     </hgroup>
