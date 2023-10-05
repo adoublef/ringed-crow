@@ -25,7 +25,10 @@ export function handleAbout(): Handler {
                     </hgroup>
                 </main>
                 <footer>
-                    <small>Powered by <a hx-boost={false} href="https://bun.sh">Bun</a></small>
+                    <small>
+                        Powered by <a hx-boost={false} href="https://bun.sh">Bun</a>.
+                        Source code on <a hx-boost={false} href="https://github.com/adoublef/ringed-crow">GitHub</a>
+                    </small>
                 </footer>
             </Base>
         );

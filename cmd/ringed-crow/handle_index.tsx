@@ -20,14 +20,14 @@ export function handleIndex(): Handler<any, DTurso> {
         }
     };
 
-    const getName =async (c: Client, name: string)=>{
+    const getName = async (c: Client, name: string) => {
         // NOTE -- throw internal error if there is an error
         const rs = ((await c.execute({
             sql: "SELECT ?", args: [name]
         })).rows.at(0)!);
 
-        return (rs)[0] as string
-    }
+        return (rs)[0] as string;
+    };
 
     return async (c) => {
         const { q } = parseDto(c.query);
@@ -59,7 +59,10 @@ export function handleIndex(): Handler<any, DTurso> {
                     </p>
                 </main>
                 <footer>
-                    <small>Powered by <a hx-boost={false} href="https://bun.sh">Bun</a></small>
+                    <small>
+                        Powered by <a hx-boost={false} href="https://bun.sh">Bun</a>.
+                        Source code on <a hx-boost={false} href="https://github.com/adoublef/ringed-crow">GitHub</a>
+                    </small>
                 </footer>
             </Base>
         );
