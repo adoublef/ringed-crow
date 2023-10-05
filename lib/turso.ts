@@ -10,6 +10,11 @@ export function turso(c: Client) {
     return app;
 }
 
+export type Decorator = {
+    request: { db: Client; };
+    store: {};
+};
+
 /**
  * Ping will ping the database to check that all is good.
  * 
@@ -29,6 +34,6 @@ export async function ping(c: Client): Promise<true> {
         if (error instanceof LibsqlError) {
             throw new ReferenceError("error pinging the database", { cause: error });
         }
-        throw error
+        throw error;
     }
 }

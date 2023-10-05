@@ -23,5 +23,5 @@ if (
     await serve(app);
 
     // TODO -- handle graceful shutdown
-    // required to sync changes to Tursogs
+    // required to sync changes to Turso
 }
