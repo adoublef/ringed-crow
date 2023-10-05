@@ -16,7 +16,7 @@ tasks:
   img:
     cmds: 
       - docker build -t ringed-crow .
-      - docker run --rm -d -p 8000:8000 ringed-crow
+      - infisical run --env=dev --path=ringed-crow --secret-overriding -- docker run --rm -p 8000:8000 ringed-crow
 
   htmx:
     cmds:
