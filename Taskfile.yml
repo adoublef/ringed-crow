@@ -7,7 +7,7 @@ tasks:
   dev:
     deps:
       - cache
-    cmd: infisical run --env=dev --path=ringed-crow -- bun run start
+    cmd: infisical run --env=dev --path=ringed-crow --secret-overriding -- bun run start
 
   env:
     cmds:
