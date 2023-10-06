@@ -7,7 +7,7 @@ tasks:
   dev:
     deps:
       - cache
-    cmd: infisical run --env=dev --path=ringed-crow --secret-overriding -- bun run start
+    cmd: infisical run --env=dev --path=ringed-crow --secret-overriding -- bun run cmd/ringed-crow/dev.ts
 
   env:
     cmds:
@@ -16,9 +16,4 @@ tasks:
   img:
     cmds: 
       - docker build -t ringed-crow .
-      - infisical run --env=dev --path=ringed-crow --secret-overriding -- docker run --rm -p 8000:8000 ringed-crow
-
-  htmx:
-    cmds:
-      - curl -L -o static/htmx.min.js https://unpkg.com/htmx.org@latest/dist/htmx.min.js
-      - curl -L -o static/hyperscript.min.js https://unpkg.com/hyperscript.org@latest/dist/_hyperscript.min.js
+      - docker run --rm --env-file <(infisical export --env=dev --path=ringed-crow --format=dotenv) -p 8000:8000 ringed-crow

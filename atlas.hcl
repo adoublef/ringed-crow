@@ -9,7 +9,7 @@ variable "url" {
 }
 
 locals {
-    src = [""]
+    src = ["file://iam/turso/schema.sql"]
 }
 
 env "turso" {
