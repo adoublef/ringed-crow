@@ -34,5 +34,5 @@ export async function serve(
 
 async function bootServer(handler: { fetch: (req: Request) => Response | Promise<Response>; }, opts: { port: number; }): Promise<void> {
     const server = Bun.serve({ ...opts, fetch: handler.fetch });
-    console.log(`🦊 Server is listening on ${server.hostname}:${server.port}`);
+    console.log(`🦊 Server is listening on http://${server.hostname}:${server.port}`);
 }
