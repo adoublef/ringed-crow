@@ -1,5 +1,8 @@
 import { Component } from "@kitajs/html";
 
+const api =
+    "https://assets.adoublef.dev";
+
 export const Base: Component<{ head: HeadProps; }> = ({
     head: { title },
     children
@@ -10,19 +13,17 @@ export const Base: Component<{ head: HeadProps; }> = ({
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>{title}</title>
-            {/* @ts-expect-error `crossorigin` is valid */}
-            <link rel="preload" as="font" href="https://assets.adoublef.dev/4/poppins.ttf" type="font/ttf" crossorigin />
-            {/* @ts-expect-error `crossorigin` is valid */}
-            <link rel="preload" as="font" href="https://assets.adoublef.dev/7/poppins.ttf" type="font/ttf" crossorigin />
-            <link rel="stylesheet" href="https://assets.adoublef.dev/typography/style.css" />
-            <link rel="stylesheet" href="https://assets.adoublef.dev/color/style.css" />
-            <link rel="stylesheet" href="https://assets.adoublef.dev/composition/style.css" />
-            {/* @ts-expect-error `as` is valid */}
-            <link rel="preload" as="script" href="https://assets.adoublef.dev/htmx.min.js" />
-            <script src="https://assets.adoublef.dev/htmx.min.js" defer></script>
-            {/* @ts-expect-error `as` is valid */}
-            <link rel="preload" as="script" href="https://assets.adoublef.dev/hyperscript.min.js" />
-            <script src="https://assets.adoublef.dev/hyperscript.min.js" defer></script>
+            {/* @ts-expect-error as is valid */}
+            <link rel="preload" as="font" href={`${api}/fonts/v/space_grotesk.woff2`} type="font/woff2" />
+            {/* @ts-expect-error as is valid */}
+            <link rel="preload" as="font" href={`${api}/fonts/v/lexend.woff2`} type="font/woff2" />
+            {/* @ts-expect-error as is valid */}
+            <link rel="preload" as="script" href={`${api}/scripts/htmx.min.js`} />
+            {/* @ts-expect-error as is valid */}
+            <link rel="preload" as="script" href={`${api}/scripts/hyperscript.min.js`} />
+            <link rel="stylesheet" href={`${api}/stylesheets/index.css`} />
+            <script src={`${api}/scripts/htmx.min.js`} defer></script>
+            <script src={`${api}/scripts/hyperscript.min.js`} defer></script>
         </head>
 
         <body hx-boost="true">{children}</body>
